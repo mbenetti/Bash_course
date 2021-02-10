@@ -1,27 +1,30 @@
 #! /usr/bin/bash
-# 0- With the command $wich bash we get the location bash in out system
+# 0) With the command $wich bash we get the location bash in out system
 
-# 1-Remember to enable rights to run the script with $chmod +x Intro_to_bash.sh
+# 1) Remember to enable rights to run the script with $chmod +x Intro_to_bash.sh 
+#   and with Ctr+/ we can comment and uncomment lines on VS Code
 
-# 2-ECHO COMMAND
-echo Hello World!
+# 2) ECHO COMMAND
+# echo Hello World!
 
-# 3-VARIABLES are Uppercase by convention (Letters, numbers, underscores)
+# 3) VARIABLES are Uppercase by convention. What is allowed are : letters, numbers and underscores
 # NAME="Bob"
 # echo "My name is $NAME"
 # echo "My name is ${NAME}"
 
-# 4-USER INPUT, p promt the user
-# read -p "Enter your name: " NAME
-# echo "Hello $NAME, nice to meet you!"
+# 4) USER INPUT, p promt the user
+read -p "Enter your name: " NAME
+echo "Hello $NAME, nice to meet you!"
 
-# SIMPLE IF STATEMENT
+# 5) Conditionals
+# 5-1) SIMPLE IF STATEMENT
+# with `if` we start and with `fi` we finish the conditional.
 # if [ "$NAME" == "Brad" ]
 # then
 #   echo "Your name is Brad"
 # fi
 
-# IF-ELSE
+# 5-2) IF-ELSE STATEMENT
 # if [ "$NAME" == "Brad" ]
 # then
 #   echo "Your name is Brad"
@@ -29,7 +32,7 @@ echo Hello World!
 #   echo "Your name is NOT Brad"
 # fi
 
-# ELSE-IF (elif)
+# 5-3) ELSE-IF (elif). This is for more thant two options if->then/elif->then/else->fi
 # if [ "$NAME" == "Brad" ]
 # then
 #   echo "Your name is Brad"
@@ -40,7 +43,7 @@ echo Hello World!
 #   echo "Your name is NOT Brad or Jack"
 # fi
 
-# COMPARISON
+# 5-4) COMPARISON WITH OPERATORS
 # NUM1=31
 # NUM2=5
 # if [ "$NUM1" -gt "$NUM2" ]
