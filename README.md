@@ -1,8 +1,6 @@
 # Introduccion to Bash scripting
 
-![GitHub Logo](https://unsplash.com/photos/EJMTKCZ00I0)
-
-[image]: https://unsplash.com/photos/EJMTKCZ00I0
+<img align="left" src="https://unsplash.com/photos/EJMTKCZ00I0">
 
 This repository follow the tutorial on [youtube] (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
 
