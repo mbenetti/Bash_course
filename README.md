@@ -1,6 +1,9 @@
 # Introduccion to Bash scripting
 
-![image](https://www.shutterstock.com/image-photo/smart-female-programer-working-on-desktop-1590824860)
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](<span>Photo by <a href="https://unsplash.com/@pakata?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pakata Goh</a> on <a href="https://unsplash.com/s/photos/programming?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)
+
+![image](https://unsplash.com/photos/EJMTKCZ00I0)
 
 This repository follow the tutorial on [youtube] (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
 
