@@ -22,8 +22,8 @@ The script has been modified and expanse according to my own needs. All the addi
 
 * Follow the file in numeric order by uncommenting lines, saving the file and run the scrip with:
 
-` ./Intro_to_bash.sh
-
+` ./Intro_to_bash.sh `
+ 
 In case to have an error please check the first two point of the file:
 
 * With the command $`which bash` we get the location bash in out system (in my case was `/usr/bin/bash`) and change the first line of the file accordingly.
