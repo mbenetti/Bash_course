@@ -26,6 +26,6 @@ The script has been modified and expanse according to my own needs. All the addi
 
 In case to have an error please check the first two point of the file:
 
-* With the command $`which bash` we get the location bash in out system (in my case was `/usr/bin/bash`) and change the first line of the file accordingly.
+* With the command `which bash` we get the location bash in out system (in my case it was: `/usr/bin/bash`) and change the first line of the file accordingly.
 
-* Remember to enable rights to run the script with `chmod +x Intro_to_bash.sh`
+* Remember to enable the rights to run the script with `chmod +x Intro_to_bash.sh`
