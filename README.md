@@ -1,5 +1,7 @@
 # Introduccion to Bash scripting
 
+![image](https://www.shutterstock.com/image-photo/smart-female-programer-working-on-desktop-1590824860)
+
 This repository follow the tutorial on [youtube] (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
 
 The script has been modified and explanded according to my own needs. All the additions have an educational purpose. 
