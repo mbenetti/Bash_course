@@ -1,9 +1,10 @@
 #! /usr/bin/bash
+# 0- With the command $wich bash we get the location bash in out system
 
 # 1-Remember to enable rights to run the script with $chmod +x Intro_to_bash.sh
 
 # 2-ECHO COMMAND
-# echo Hello World!
+echo Hello World!
 
 # 3-VARIABLES are Uppercase by convention (Letters, numbers, underscores)
 # NAME="Bob"
