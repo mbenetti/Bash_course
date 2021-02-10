@@ -1,7 +1,6 @@
 # Introduccion to Bash scripting
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](<span>Photo by <a href="https://unsplash.com/@pakata?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pakata Goh</a> on <a href="https://unsplash.com/s/photos/programming?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)
+![GitHub Logo](https://unsplash.com/photos/EJMTKCZ00I0)
 
 ![image](https://unsplash.com/photos/EJMTKCZ00I0)
 
