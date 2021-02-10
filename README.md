@@ -10,7 +10,7 @@ The script has been modified and explanded according to my own needs. All the ad
 
 ` https://github.com/mbenetti/Bash_course.git `
 
-* within the folder Bash_course run the command:
+* Within the folder Bash_course run the followin command:
 
 ` code . `
 
