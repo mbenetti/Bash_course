@@ -24,7 +24,7 @@ The script has been modified and expanse according to my own needs. All the addi
 
 ` ./Intro_to_bash.sh `
  
-In case to have an error please check the first two point of the file:
+In case to have an error when you run the script, please check the first two point of the file:
 
 * With the command `which bash` we get the location bash in out system (in my case it was: `/usr/bin/bash`) and change the first line of the file accordingly.
 
