@@ -5,18 +5,22 @@
 #   and with Ctr+/ we can comment and uncomment lines on VS Code
 
 # 2) ECHO COMMAND
+
 # echo Hello World!
 
 # 3) VARIABLES are Uppercase by convention. What is allowed are : letters, numbers and underscores
+
 # NAME="Bob"
 # echo "My name is $NAME"
 # echo "My name is ${NAME}"
 
 # 4) USER INPUT, p promt the user
-read -p "Enter your name: " NAME
-echo "Hello $NAME, nice to meet you!"
+
+# read -p "Enter your name: " NAME
+# echo "Hello $NAME, nice to meet you!"
 
 # 5) Conditionals
+
 # 5-1) SIMPLE IF STATEMENT
 # with `if` we start and with `fi` we finish the conditional.
 # if [ "$NAME" == "Brad" ]
@@ -43,8 +47,20 @@ echo "Hello $NAME, nice to meet you!"
 #   echo "Your name is NOT Brad or Jack"
 # fi
 
-# 5-4) COMPARISON WITH OPERATORS
-# NUM1=31
+# 6) COMPARISON WITH OPERATORS
+
+# List of logic operators for comparison the value 1 (val1), and value 2 (val2)
+# Possible of valid operations:
+# val1 -eq val2 Returns true if the values are equal
+# val1 -ne val2 Returns true if the values are not equal
+# val1 -gt val2 Returns true if val1 is greater than val2
+# val1 -ge val2 Returns true if val1 is greater than or equal to val2
+# val1 -lt val2 Returns true if val1 is less than val2
+# val1 -le val2 Returns true if val1 is less than or equal to val2
+####
+
+# Example:
+# NUM1=3
 # NUM2=5
 # if [ "$NUM1" -gt "$NUM2" ]
 # then
@@ -53,25 +69,9 @@ echo "Hello $NAME, nice to meet you!"
 #   echo "$NUM1 is less than $NUM2"
 # fi
 
-########
-# val1 -eq val2 Returns true if the values are equal
-# val1 -ne val2 Returns true if the values are not equal
-# val1 -gt val2 Returns true if val1 is greater than val2
-# val1 -ge val2 Returns true if val1 is greater than or equal to val2
-# val1 -lt val2 Returns true if val1 is less than val2
-# val1 -le val2 Returns true if val1 is less than or equal to val2
-########
+# 7) CONDITIONS RELATED TO FILES AND DIRECTORIES 
 
-# FILE CONDITIONS
-# FILE="test.txt"
-# if [ -e "$FILE" ]
-# then
-#   echo "$FILE exists"
-# else
-#   echo "$FILE does NOT exist"
-# fi
-
-########
+# Possible or valid flags:
 # -d file   True if the file is a directory
 # -e file   True if the file exists (note that this is not particularly portable, thus -f is generally used)
 # -f file   True if the provided string is a file
@@ -83,11 +83,21 @@ echo "Hello $NAME, nice to meet you!"
 # -x    True if the file is an executable
 ########
 
-#CASE STATEMENT
+# Example:
+# FILE="test.txt"
+# if [ -e "$FILE" ]
+# then
+#   echo "$FILE exists"
+# else
+#   echo "$FILE does NOT exist"
+# fi
+
+# 8) CASE STATEMENT, for example: in case the answer is Y or y or YES or yes
+
 # read -p "Are you 21 or over? Y/N " ANSWER
 # case "$ANSWER" in 
 #   [yY] | [yY][eE][sS])
-#     echo "You can have a beer :)"
+#     echo "You can have a beer"
 #     ;;
 #   [nN] | [nN][oO])
 #     echo "Sorry, no drinking"
@@ -97,14 +107,20 @@ echo "Hello $NAME, nice to meet you!"
 #     ;;
 # esac
 
-# SIMPLE FOR LOOP
+# In case the answer is not valid the third option is for any other imput answer 
+
+# 9) SIMPLE FOR LOOP
+# This example perfom a simple loop trough all the names
+
 # NAMES="Brad Kevin Alice Mark"
 # for NAME in $NAMES
 #   do
 #     echo "Hello $NAME"
 # done
 
-# FOR LOOP TO RENAME FILES
+# ANOTHER MORE USEFUL EXAMPLE IS A LOOP TO RENAME FILES
+# Run touch 1.txt 2.txt 3.txt
+
 # FILES=$(ls *.txt)
 # NEW="new"
 # for FILE in $FILES  
