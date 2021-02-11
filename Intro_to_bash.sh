@@ -1,4 +1,22 @@
 #! /usr/bin/bash
+# ------------------------------------------
+
+# This tutorial conver the following list:
+# 1 - Enabling right to run the script
+# 2 - ECHO command
+# 3 - Use of VARIABLES
+# 4 - User imput to the script
+# 5 - Use of conditionals
+# 6 - Comparison with operators
+# 7 - Logic related to files and directories
+# 8 - CASE, like if but with more options
+# 9 - Simple FOR loop
+# 10- WHILE loop
+# 11- Functions and with parameters
+# 12- Create folders and files
+
+# -----------------------------------------
+
 # 0) With the command $wich bash we get the location bash in out system
 
 # 1) Remember to enable rights to run the script with $chmod +x Intro_to_bash.sh 
@@ -69,7 +87,7 @@
 #   echo "$NUM1 is less than $NUM2"
 # fi
 
-# 7) CONDITIONS RELATED TO FILES AND DIRECTORIES 
+# 7) LOGIC RELATED TO FILES AND DIRECTORIES 
 
 # Possible or valid flags:
 # -d file   True if the file is a directory
@@ -118,7 +136,7 @@
 #     echo "Hello $NAME"
 # done
 
-# ANOTHER MORE USEFUL EXAMPLE IS A LOOP TO RENAME FILES
+# ANOTHER MORE USEFUL EXAMPLE WOULD BE A LOOP TO RENAME FILES
 # Run touch 1.txt 2.txt 3.txt
 # FILE is the variable I want to use, and $FILE is the content of the variable
 
@@ -130,7 +148,7 @@
 #     mv $FILE $NEW-$FILE
 # done
 
-# WHILE LOOP - READ THROUGH A FILE LINE BY LINE AND PRINT OUT (WITH ECHO)
+# 10) WHILE LOOP - READ THROUGH A FILE LINE BY LINE AND PRINT OUT (WITH ECHO)
 # The variable LINE is the index of the line to read from the file,
 # CURRENT_LINE is a temporary variable where the content of the line is 
 # storage, and LINE++ increment the line number by one every iteration
@@ -143,20 +161,27 @@
 #     ((LINE++))
 # done < "./new-1.txt"
 
-# FUNCTION
+# 11) FUNCTIONS
+# First, I declare the function name and between brackets the funtion method(action to perform)
 # function sayHello() {
 #   echo "Hello World"
 # }
+
 # sayHello
 
-# FUNCTION WITH PARAMS
+# 11-2) FUNCTION WITH PARAMETERS
+# The imput parameters for the funtions in this case are $1=Brad and $2=36
+# This funtion use positional parameters indicated with the $1 and $2
+
 # function greet() {
 #   echo "Hello, I am $1 and I am $2"
 # }
-
 # greet "Brad" "36"
 
-# CREATE FOLDER AND WRITE TO A FILE
+
+# 12) CREATE FOLDER AND WRITE TO A FILE
+# This will create a directory, and a file in that directory. With echo we insert (>>) text 
+# in the file indicated after the operator
 # mkdir hello
 # touch "hello/world.txt"
 # echo "Hello World" >> "hello/world.txt"
