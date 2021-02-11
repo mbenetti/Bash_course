@@ -120,6 +120,7 @@
 
 # ANOTHER MORE USEFUL EXAMPLE IS A LOOP TO RENAME FILES
 # Run touch 1.txt 2.txt 3.txt
+# FILE is the variable I want to use, and $FILE is the content of the variable
 
 # FILES=$(ls *.txt)
 # NEW="new"
@@ -129,7 +130,12 @@
 #     mv $FILE $NEW-$FILE
 # done
 
-# WHILE LOOP - READ THROUGH A FILE LINE BY LINE
+# WHILE LOOP - READ THROUGH A FILE LINE BY LINE AND PRINT OUT (WITH ECHO)
+# The variable LINE is the index of the line to read from the file,
+# CURRENT_LINE is a temporary variable where the content of the line is 
+# storage, and LINE++ increment the line number by one every iteration
+# the < "./new-1.txt" indicate the name of the file
+
 # LINE=1
 # while read -r CURRENT_LINE
 #   do
