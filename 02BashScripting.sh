@@ -28,7 +28,10 @@
 
 # -----------------------------------------
 
-# 0 - Scrpting options, this shows all posibles shells in out system
+# 0 - Scrpting options: this shows all posibles shells in out system
 # cat /etc/shells
-# touch myscript.sh
-# 
+touch myscript.sh
+WBASH=$(which bash) 
+echo "!# $WBASH" >> myscript.sh
+
+
