@@ -27,11 +27,19 @@
 # 22)  Debugging bash scripts
 
 # -----------------------------------------
+# This script will create a empty script file:
+
+# touch myscript.sh
+# WBASH=$(which bash) 
+# echo "#! $WBASH" >> myscript.sh
+# chmod +x myscript.sh
 
 # 0 - Scrpting options: this shows all posibles shells in out system
 # cat /etc/shells
-touch myscript.sh
-WBASH=$(which bash) 
-echo "!# $WBASH" >> myscript.sh
+
+# 01) Hello Bash Scripting
+
+
+
 
 
