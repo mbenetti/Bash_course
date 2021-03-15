@@ -8,13 +8,13 @@
 
 This repository follow the tutorial on (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
 
-The script has been modified and expanse according to my own needs. All the additions have an educational purpose. 
+All the additions and modifications have an educational purpose. The script can be used on the Ubuntu WSL. 
 
 ## How to use this repo
 
 * first clone the repo inside your WSL (Linux sub system for Windows):
 
-` https://github.com/mbenetti/Bash_course.git `
+`git clone https://github.com/mbenetti/Bash_course.git `
 
 * Within the folder Bash_course run the following command:
 
