@@ -6,7 +6,7 @@
 
 # Introduction to Bash scripting
 
-This repository follow the tutorial on (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
+ This repository follow the tutorial on (https://youtu.be/v-F3YLd6oMw) created by Traversy Media.
 
 All the additions and modifications have an educational purpose. The script can be used on the Ubuntu WSL. 
 
