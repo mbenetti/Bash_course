@@ -34,6 +34,9 @@ Update 10.2022. Now you can follow with the code block in the ebook.
 
 https://mauro-benetti-1.gitbook.io/tutorials/intro-to-bash
 
+![image](https://user-images.githubusercontent.com/27162948/200238049-5e6b5a53-cda9-4f5e-ba05-420f7b99a5bc.png)
+
+
 ***
 <sup><sub>
 Images from https://pixabay.com *(Free for commercial use, No attribution required )*
