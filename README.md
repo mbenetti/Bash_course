@@ -30,7 +30,7 @@ In case to have an error when you run the script, please check the first two poi
 
 * Remember to enable the rights to run the script with `chmod +x Intro_to_bash.sh`
 
-Update 10.2022. Now you can follow with the code block in the ebook.
+Update 10.2022. Now you can follow and copy+past the code blocks from the ebook.
 
 https://mauro-benetti-1.gitbook.io/tutorials/intro-to-bash
 
