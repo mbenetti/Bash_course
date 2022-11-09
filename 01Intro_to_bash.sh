@@ -1,188 +1,312 @@
-#! /usr/bin/bash
-# ------------------------------------------
+## Begging of the file
 
-# This tutorial conver the following list:
-# 1 - Enabling right to run the script
-# 2 - ECHO command
-# 3 - Use of VARIABLES
-# 4 - User imput to the script
-# 5 - Use of conditionals
-# 6 - Comparison with operators
-# 7 - Logic related to files and directories
-# 8 - CASE, like if but with more options
-# 9 - Simple FOR loop
-# 10- WHILE loop
-# 11- Functions and with parameters
-# 12- Create folders and files
+I start every bash with a disclaimer
 
-# -----------------------------------------
+```bash
+  ------------------------------------------
+  Year Your Name
 
-# 0) With the command $wich bash we get the location bash in out system
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the Academic Free License ("AFL") v. 3.0.
 
-# 1) Remember to enable rights to run the script with $chmod +x Intro_to_bash.sh 
-#   and with Ctr+/ we can comment and uncomment lines on VS Code
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 
-# 2) ECHO COMMAND
+  https://opensource.org/licenses/afl-3.0.php
 
-# echo Hello World!
+  -----------------------------------------------
+```
 
-# 3) VARIABLES are Uppercase by convention. What is allowed are : letters, numbers and underscores
+Then script with the following prolog:
 
-# NAME="Bob"
-# echo "My name is $NAME"
-# echo "My name is ${NAME}"
+```bash
+#!/bin/bash  
+set -o nounset  
+set -o errexit
+```
 
-# 4) USER INPUT, p promt the user
+This will take care of two very common errors:
 
-# read -p "Enter your name: " NAME
-# echo "Hello $NAME, nice to meet you!"
+1. Referencing undefined variables (which default to "")
+2. Ignoring failing commands
 
-# 5) Conditionals
+## Location bash in out system
 
-# 5-1) SIMPLE IF STATEMENT
-# with `if` we start and with `fi` we finish the conditional.
-# if [ "$NAME" == "Brad" ]
-# then
-#   echo "Your name is Brad"
-# fi
+With the command
 
-# 5-2) IF-ELSE STATEMENT
-# if [ "$NAME" == "Brad" ]
-# then
-#   echo "Your name is Brad"
-# else 
-#   echo "Your name is NOT Brad"
-# fi
+```bash
+$wich bash 
+```
 
-# 5-3) ELSE-IF (elif). This is for more thant two options if->then/elif->then/else->fi
-# if [ "$NAME" == "Brad" ]
-# then
-#   echo "Your name is Brad"
-# elif [ "$NAME" == "Jack" ]
-# then  
-#   echo "Your name is Jack"
-# else 
-#   echo "Your name is NOT Brad or Jack"
-# fi
+we get the location bash in out system
 
-# 6) COMPARISON WITH OPERATORS
+## Remember to enable rights to run the script with
 
-# List of logic operators for comparison the value 1 (val1), and value 2 (val2)
-# Possible of valid operations:
-# val1 -eq val2 Returns true if the values are equal
-# val1 -ne val2 Returns true if the values are not equal
-# val1 -gt val2 Returns true if val1 is greater than val2
-# val1 -ge val2 Returns true if val1 is greater than or equal to val2
-# val1 -lt val2 Returns true if val1 is less than val2
-# val1 -le val2 Returns true if val1 is less than or equal to val2
-####
+```bash
+$chmod +x Intro_to_bash.sh 
+```
 
-# Example:
-# NUM1=3
-# NUM2=5
-# if [ "$NUM1" -gt "$NUM2" ]
-# then
-#   echo "$NUM1 is greater than $NUM2"
-# else
-#   echo "$NUM1 is less than $NUM2"
-# fi
+and with Ctr + / we can comment and uncomment lines on VS Code
 
-# 7) LOGIC RELATED TO FILES AND DIRECTORIES 
+## Echo command
 
-# Possible or valid flags:
-# -d file   True if the file is a directory
-# -e file   True if the file exists (note that this is not particularly portable, thus -f is generally used)
-# -f file   True if the provided string is a file
-# -g file   True if the group id is set on a file
-# -r file   True if the file is readable
-# -s file   True if the file has a non-zero size
-# -u    True if the user id is set on a file
-# -w    True if the file is writable
-# -x    True if the file is an executable
-########
+```bash
+echo Hello World!
+```
 
-# Example:
-# FILE="test.txt"
-# if [ -e "$FILE" ]
-# then
-#   echo "$FILE exists"
-# else
-#   echo "$FILE does NOT exist"
-# fi
+## Variables
 
-# 8) CASE STATEMENT, for example: in case the answer is Y or y or YES or yes
+Are Uppercase by convention. What is allowed :
 
-# read -p "Are you 21 or over? Y/N " ANSWER
-# case "$ANSWER" in 
-#   [yY] | [yY][eE][sS])
-#     echo "You can have a beer"
-#     ;;
-#   [nN] | [nN][oO])
-#     echo "Sorry, no drinking"
-#     ;;
-#   *)
-#     echo "Please enter y/yes or n/no"
-#     ;;
-# esac
+* letters
+* numbers and underscores
 
-# In case the answer is not valid the third option is for any other imput answer 
+```bash
+NAME="Bob"
+```
 
-# 9) SIMPLE FOR LOOP
-# This example perfom a simple loop trough all the names
+```bash
+echo "My name is $NAME"
+```
 
-# NAMES="Brad Kevin Alice Mark"
-# for NAME in $NAMES
-#   do
-#     echo "Hello $NAME"
-# done
+```bash
+echo "My name is ${NAME}"
+```
 
-# ANOTHER MORE USEFUL EXAMPLE WOULD BE A LOOP TO RENAME FILES
-# Run touch 1.txt 2.txt 3.txt
-# FILE is the variable I want to use, and $FILE is the content of the variable
+## User input
 
-# FILES=$(ls *.txt)
-# NEW="new"
-# for FILE in $FILES  
-#   do
-#     echo "Renaming $FILE to new-$FILE"
-#     mv $FILE $NEW-$FILE
-# done
+prompt for the user to input data
 
-# 10) WHILE LOOP - READ THROUGH A FILE LINE BY LINE AND PRINT OUT (WITH ECHO)
-# The variable LINE is the index of the line to read from the file,
-# CURRENT_LINE is a temporary variable where the content of the line is 
-# storage, and LINE++ increment the line number by one every iteration
-# the < "./new-1.txt" indicate the name of the file
+```bash
+read -p "Enter your name: " NAME
+```
 
-# LINE=1
-# while read -r CURRENT_LINE
-#   do
-#     echo "$LINE: $CURRENT_LINE"
-#     ((LINE++))
-# done < "./new-1.txt"
+```bash
+echo "Hello $NAME, nice to meet you!"
+```
 
-# 11) FUNCTIONS
-# First, I declare the function name and between brackets the funtion method(action to perform)
-# function sayHello() {
-#   echo "Hello World"
-# }
+## Conditionals
 
-# sayHello
+### Simple if statement
 
-# 11-2) FUNCTION WITH PARAMETERS
-# The imput parameters for the funtions in this case are $1=Brad and $2=36
-# This funtion use positional parameters indicated with the $1 and $2
+with `if` we start and with `fi` we finish the conditional.
 
-# function greet() {
-#   echo "Hello, I am $1 and I am $2"
-# }
-# greet "Brad" "36"
+```bash
+if [ "$NAME" == "Brad" ]
+then
+  echo "Your name is Brad"
+fi
+```
 
+### If-else statement
 
-# 12) CREATE FOLDER AND WRITE TO A FILE
-# This will create a directory, and a file in that directory. With echo we insert (>>) text 
-# in the file indicated after the operator
-# mkdir hello
-# touch "hello/world.txt"
-# echo "Hello World" >> "hello/world.txt"
-# echo "Created hello/world.txt"
+```bash
+if [ "$NAME" == "Brad" ]
+then
+  echo "Your name is Brad"
+else 
+  echo "Your name is NOT Brad"
+fi
+```
+
+### Else-if (elif)
+
+This is for more thant two options if->then/elif->then/else->fi
+
+```bash
+if [ "$NAME" == "Brad" ]
+then
+  echo "Your name is Brad"
+elif [ "$NAME" == "Jack" ]
+then  
+  echo "Your name is Jack"
+else 
+  echo "Your name is NOT Brad or Jack"
+fi
+```
+
+## Comparison with operators
+
+List of logic operators for comparison the value 1 (val1), and value 2 (val2) Possible of valid operations:
+
+```bash
+val1 -eq val2
+```
+
+Returns true if the values are equal
+
+```bash
+val1 -ne val2 
+```
+
+Returns true if the values are not equal
+
+```bash
+val1 -gt val2 
+```
+
+Returns true if val1 is greater than val2
+
+```bash
+val1 -ge val2 
+```
+
+Returns true if val1 is greater than or equal to val2
+
+```bash
+val1 -lt val2 
+```
+
+Returns true if val1 is less than val2
+
+```bash
+val1 -le val2 
+```
+
+Returns true if val1 is less than or equal to val2
+
+Example:
+
+```bash
+NUM1=3
+NUM2=5
+if [ "$NUM1" -gt "$NUM2" ]
+then
+echo "$NUM1 is greater than $NUM2"
+else
+echo "$NUM1 is less than $NUM2"
+fi
+```
+
+## Logic related to files and directories
+
+Possible or valid flags:
+
+```bash
+-d  file   True if the file is a directory
+-e  file   True if the file exists (note that this is not particularly portable, thus -f is generally  used)
+-f  file   True if the provided string is a file
+-g  file   True if the group id is set on a file
+-r  file   True if the file is readable
+-s  file   True if the file has a non-zero size
+-u    True if the user id is set on a file
+-w    True if the file is writable
+-x    True if the file is an executable
+```
+
+Example:
+
+```bash
+FILE="test.txt"
+if [ -e "$FILE" ]
+then
+echo "$FILE exists"
+else
+echo "$FILE does NOT exist"
+fi
+```
+
+## Case statement
+
+For example: in case the answer is Y or y or YES or yes
+
+```bash
+read -p "Are you 21 or over? Y/N " ANSWER
+case "$ANSWER" in 
+[yY] | [yY][eE][sS])
+  echo "You can have a beer"
+  ;;
+[nN] | [nN][oO])
+  echo "Sorry, no drinking"
+  ;;
+*)
+  echo "Please enter y/yes or n/no"
+  ;;
+esac
+```
+
+In case the answer is not valid the third option is for any other input answer
+
+## Simple loop
+
+This example perform a simple loop trough all the names
+
+```bash
+NAMES="Brad Kevin Alice Mark" for NAME in $NAMES do echo "Hello $NAME" done
+```
+
+Another more useful example would make a loop to rename files. For that we are going to create some files inside the folder "test"
+
+```bash
+mkdir test && cd test && touch 1.txt 2.txt 3.txt 
+```
+
+run the script from inside the folder with:
+
+```bash
+.././01_intro.sh
+```
+
+FILE is the variable that contains the list of files, and $FILE is the content of that variable
+
+```bash
+FILES=$(ls \*.txt) NEW="new" for FILE in $FILES  
+do echo "Renaming $FILE to new-$FILE" mv $FILE $NEW-$FILE done
+```
+
+## While loop
+
+Read through a file line by line and print out (with echo)
+
+The variable LINE is the index of the line to read from the file, CURRENT_LINE is a temporary variable where the content of the line is storage, and LINE++ increment the line number by one every iteration the `< "./new-1.txt"` indicate the name of the file
+
+```bash
+LINE=1 while read -r CURRENT_LINE do echo "$LINE: $CURRENT_LINE" ((LINE++)) done < "./new-1.txt"
+```
+
+## Funtions
+
+First, I declare the function name and between brackets the function method(action to perform) 
+
+```bash
+function sayHello(){ echo "Hello World" }
+```
+
+To call the function simply name it
+```bash
+sayHello
+```
+
+### Function with parameters
+
+The input parameters for the functions in this case are `$1=Brad` and `$2=36` This function use positional parameters indicated with the $1 and $2
+
+```bash
+function greet() { 
+	echo "Hello, I am $1 and I am $2" 
+} 
+
+greet "Brad" "36"
+
+```
+
+Then run the script and the result will be:
+
+`Hello, I am Brad and I am 36`
+
+Alternatively, you can also pass the parameters to the script, for instance:
+```bash
+./01_intro.sh Brad 22
+```
+Will return:
+
+`Hello, I am Brad and I am 22`
+
+## Create folder and write into a file
+
+This will create a directory, and a file in that directory. With echo we insert (>>) text in the file indicated after the operator
+
+```bash
+mkdir hello && touch "hello/world.txt" && echo "Hello World" >> "hello/world.txt" && echo "Created hello/world.txt"
+```
